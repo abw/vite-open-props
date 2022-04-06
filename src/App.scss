@@ -1,0 +1,17 @@
+@use 'styles/variables';
+@import "open-props/style";
+@import "open-props/normalize";
+
+h1 {
+  color: var(--violet-4);
+  margin: 0;
+}
+
+.panel {
+  max-inline-size: var(--size-content-3);
+  background: var(--gradient-2);
+  color: var(--violet-1);
+  padding: var(--my-unit);
+  margin: var(--my-unit) auto;
+  box-shadow: var(--shadow-3);
+}
