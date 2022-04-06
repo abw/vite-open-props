@@ -11,8 +11,8 @@ It uses [PostCSS](https://postcss.org/) and [PostCSS JIT Props](https://github.c
 
 ## The Problem
 
-The [postcss.config.js](postcss.config.js) file contains this code, copied from
-the Open Props web site.
+The [postcss.config.js](postcss.config.js) file contained this code, copied from
+the "Props from CSS" example on the Open Props web site.
 
     const postcssJitProps = require('postcss-jit-props');
     const OpenProps = require('open-props');
@@ -27,10 +27,24 @@ the Open Props web site.
       ]
     }
 
-Alas, an error is being thrown:
+Alas, an error was being thrown:
 
     [plugin:vite:css] Package subpath './open-props.min.css' is not defined by "exports" in ...<PATH_TO_THIS_PROJECT>.../node_modules/open-props/package.json
 
 Commenting out the `require('open-props/open-props.min.css')` line supresses the error, but also prevents PostCSS JIT Props from working.
 
+## The Solution
 
+I changed the [postcss.config.js](postcss.config.js) to use the "Props as Javascript" example from
+the Open Props web site.
+
+    const postcssJitProps = require('postcss-jit-props');
+    const OpenProps = require('open-props');
+
+    module.exports = {
+      plugins: [
+        postcssJitProps(OpenProps)
+      ]
+    }
+
+After that everything worked just fine.
