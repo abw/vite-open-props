@@ -31,6 +31,6 @@ Alas, an error is being thrown:
 
     [plugin:vite:css] Package subpath './open-props.min.css' is not defined by "exports" in ...<PATH_TO_THIS_PROJECT>.../node_modules/open-props/package.json
 
-Commenting out the `require('open-props/open-props.min.css')` line supresses the error, but also prevent PostCSS JIT Props from working.
+Commenting out the `require('open-props/open-props.min.css')` line supresses the error, but also prevents PostCSS JIT Props from working.
 
 
